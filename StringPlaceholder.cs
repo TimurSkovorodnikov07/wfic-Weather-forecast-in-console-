@@ -10,8 +10,7 @@ public class StringPlaceholder
             throw new Exception($"У тебя строка длины {str.Length}, когда требуеться {requiredLength}");
 
         var strLength = str.Length;
-        var spaces = new StringBuilder();
-
+        var spaces = new StringBuilder("");
         while (strLength + spaces.Length < requiredLength)
             spaces.Append(" ");
 

@@ -12,3 +12,4 @@
 /home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.pdb
 /home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.genruntimeconfig.cache
 /home/timur/Desktop/wfic/obj/Debug/net8.0/ref/wfic.dll
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.sourcelink.json

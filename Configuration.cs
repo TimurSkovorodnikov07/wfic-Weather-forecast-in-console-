@@ -32,4 +32,10 @@ public class Configuration
 
     [NameToConfig("textColor")]
     public int TextColor { get; set; }
+
+
+
+
+    [NameToConfig("interval")]
+    public int Interval { get; set; }
 }

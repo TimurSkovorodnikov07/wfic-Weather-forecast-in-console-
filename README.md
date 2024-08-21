@@ -1,3 +1,6 @@
+---------------------Что нужно-----------------------:
+Желательна иметь поддержку Nerd fonts в твоем терминале
+
 ---------------------Как юзать-----------------------:
 sh .../wfic.sh "CityName" "Days"
 
@@ -5,11 +8,13 @@ sh .../wfic.sh "CityName" "Days"
 Example: sh /home/timur/wfic/wfic.sh "Tokyo" "7"
 
 ---------------------Пример конфига------------------:
+//Путь к конфигу должен быть таким /home/xxx/.config/wfic/config.ngrConfig
 //Коменты писать строго в отдельных линиях и как показано тут
 textColor=5;
 daysColor=10;
 temColor=11;
 nameColor=10;
+interval=4;
 
 nightColor=1;
 eveningColor=6;

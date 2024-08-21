@@ -38,7 +38,7 @@ public class Program
         {
             try
             {
-                var fromNewLine = () => Writer.Write("\n", conf.TextColor);
+                var fromNewLine = (string str = "\n") => Writer.Write(str, conf.TextColor);
 
                 Writer.WriteLine($"Hello [color={conf.NameColor}({conf.UserName})]!", conf.TextColor);
 
@@ -59,36 +59,47 @@ public class Program
                 {
                     case 200:
                         Writer.WriteLine("Прогноз погоды в городе: " + cityName
-                            + $" за {days} дней.", conf.TextColor);
-                        fromNewLine();
+                            + $" за {days} дней.\n", conf.TextColor);
 
                         foreach (var day in content.forecast.forecastday)
                         {
                             Writer.WriteLine($"[color={conf.DaysColor}({day.date})]", conf.TextColor);
 
-                            int requiredLength = 7;
+                            const int requiredLength = 9;
 
                             var temperatures = new List<string>();
-                            foreach (var hour in day.hour)
+
+                            var icon = ' ';
+                            var getHourColor = (int hour) =>
                             {
+                                if (hour > 6 && hour < 16)
+                                {
+                                    icon = '';
+                                    return conf.MorningColor;
+                                }
+                                else if (hour >= 16 && hour < 22)
+                                {
+                                    icon = '';
+                                    return conf.EveningColor;
+                                }
+                                else
+                                {
+                                    icon = '';
+                                    return conf.NightColor;
+                                }
+                                //Блять какой эе это пиздец с этими уникальнымми символами
+                                //icon был в виде строки, а я  до юзал жирные символы что были как 2 символа шириной
+                                //Ну и блять, юзайте char для символов
+                            };
+
+                            for (int i = 0; i < day.hour.Count; i += conf.Interval)
+                            {
+                                var hour = day.hour[i];
                                 var dateTime = DateTime.Parse(hour.time);
                                 var hourAndMinutes = $"{dateTime.Hour}:{dateTime.Minute}";
 
-                                var getHourColor = () =>
-                                {
-                                    var hour = dateTime.Hour;
-
-                                    if (hour > 6 && hour < 16)
-                                        return conf.MorningColor;
-                                    else if (hour >= 16 && hour < 22)
-                                        return conf.EveningColor;
-                                    else
-                                        return conf.NightColor;
-                                };
-
-                                Writer.Write($"[color={getHourColor()}"
-                                    + $"({StringPlaceholder.Fill(hourAndMinutes.ToString(), requiredLength)})]"
-                                    + $"[color={conf.TextColor}(| )]", conf.TextColor);
+                                Writer.Write($"[color={getHourColor(dateTime.Hour)}"
+                                    + $"({StringPlaceholder.Fill($" {icon} {hourAndMinutes}", requiredLength)})]|", conf.TextColor);
 
                                 temperatures.Add(hour.temp_c.ToString());
                             }
@@ -97,11 +108,9 @@ public class Program
                             //Сделал 2 foreach чтобы сначало в 1-й линии шло время а во 2-й температура
                             foreach (var t in temperatures)
                                 Writer.Write($"[color={conf.TemperatureColor}"
-                                    + $"({StringPlaceholder.Fill($"{t}°C", requiredLength)})]"
-                                    + $"[color={conf.TextColor}(| )]", conf.TextColor);
+                                    + $"({StringPlaceholder.Fill($" {t} C", requiredLength)})]|", conf.TextColor);
 
-                            fromNewLine();
-                            fromNewLine();
+                            fromNewLine("\n\n");
                         }
                         break;
                     case 400:
