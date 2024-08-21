@@ -1,0 +1,14 @@
+/home/timur/Desktop/wfic/bin/Debug/net8.0/wfic
+/home/timur/Desktop/wfic/bin/Debug/net8.0/wfic.deps.json
+/home/timur/Desktop/wfic/bin/Debug/net8.0/wfic.runtimeconfig.json
+/home/timur/Desktop/wfic/bin/Debug/net8.0/wfic.dll
+/home/timur/Desktop/wfic/bin/Debug/net8.0/wfic.pdb
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.GeneratedMSBuildEditorConfig.editorconfig
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.AssemblyInfoInputs.cache
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.AssemblyInfo.cs
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.csproj.CoreCompileInputs.cache
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.dll
+/home/timur/Desktop/wfic/obj/Debug/net8.0/refint/wfic.dll
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.pdb
+/home/timur/Desktop/wfic/obj/Debug/net8.0/wfic.genruntimeconfig.cache
+/home/timur/Desktop/wfic/obj/Debug/net8.0/ref/wfic.dll

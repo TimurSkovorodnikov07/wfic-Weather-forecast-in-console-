@@ -1,0 +1,1 @@
+public record TextAndColor(string Text, int Color);
