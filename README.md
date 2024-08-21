@@ -42,3 +42,7 @@ apiKey=xxx;
 // Magenta = 13,
 // Yellow = 14,
 // White = 15
+
+//![alt text](http://url/to/img.png)
+![alt text](https://github.com/TimurSkovorodnikov07/wfic-Weather-forecast-in-console-/blob/main/exampleImage.png)
+![alt text](https://github.com/TimurSkovorodnikov07/wfic-Weather-forecast-in-console-/blob/main/exampleImage2.png)
